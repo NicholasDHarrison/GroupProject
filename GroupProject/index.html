@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet"> 
+    
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Tip Calculator</title>
+</head>
+<body>
+    <!-- Important, encase the main body in a container div, keeps everything nice and neat -->
+    <div id="container">
+        <h1>Tip Calculator</h1>
+        <!-- after the title, it would only make sense to then present the calc before the rating -->
+        <div id="calculator">
+      
+          <!-- we make a form tag to collect user input, so we need to encase our calculator and drop down menu within it-->
+          <form>
+            <p>What was the Bill Amount?
+              <p>  <!--  we are going to add an input type of text, to start to collect or needed data -->
+                $ <input id="billamt" type="text" placeholder="Bill Amount">
+      
+                <p>How was your service?
+                  <p>
+                    <select id="serviceQual">
+                      <!-- Option tags are new to me, they can be used without any attributes, but usually need to set the value -->
+                      <!-- this is kinda niche but I have seen people put __&37 , seems out dated https://www.w3.org/MarkUp/html-spec/html-spec_13.html -->
+                      <option disabled selected value="0">-- Choose an Option --</option>
+                      <option value="0.3">30% - Outstanding</option>
+                      <option value="0.2">20% - Good</option>
+                      <option value="0.15">15% - OK</option>
+                      <option value="0.1">10% - Bad</option>
+                      <option value="0.05">5% - Horrible</option>
+                    </select>
+      
+          </form>
+          <!-- now that we know how much the cost was and their % in tip how many people will we be splitting the bill between -->
+          <p>How many people are splitting the bill?</p>
+          <!-- Another input tag text type of course, we need to collect some more information -->
+          <input id="peopleamt" type="text" placeholder="Number of People"> people
+          <!-- I use a button here so once I click it calculations are done and the extra information is displayed, looks nicer, hurts brain less -->
+          <button type="button" id="calculate">Calculate!</button>
+      
+        </div>
+        <!--calculator end-->
+        <!-- This totalTip div is that extra content I will be displaying after the button press, <sup> just makes that $ half a character above
+          the normal line, makes it look nice!!! -->
+        <div id="totalTip">
+          <sup>$</sup><span id="tip">0.00</span>
+          <!-- small is as it sounds like, makes text smaller, makes that 'each' look like those disclaimers
+            that have people sell their kidneys away  -->
+          <small id="each">each</small>
+        </div>
+        <!--totalTip end-->
+      
+      </div>
+      <!--container end-->
+      <!-- I mess this up sometimes, keep your dang js script tag at the end if you don't want to cry! -->
+      <script type="text/javascript" src="app.js"></script>
+    
+</body>
+</html>
